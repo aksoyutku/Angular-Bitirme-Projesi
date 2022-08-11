@@ -1,0 +1,77 @@
+<form #form="ngForm" (ngSubmit)="createAccount(form)">
+  <img
+    class="mb-4"
+    src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
+    alt="logo"
+    width="72"
+    height="57"
+  />
+  <h1 class="h3 mb-3 fw-normal">Register</h1>
+
+  <div class="form-group">
+    <div class="form-floating">
+      <input
+        ngModel
+        name="firstName"
+        #firstName
+        id="firstName"
+        type="text"
+        class="form-control"
+        placeholder="Ragnar"
+      />
+      <label for="firstName">Firstname</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-floating">
+      <input
+        ngModel
+        name="lastName"
+        #lastName
+        id="lastName"
+        type="text"
+        class="form-control"
+        placeholder="Lothbrok"
+      />
+      <label for="lastName">Lastname</label>
+    </div>
+  </div>
+
+  <!-- (click)="log(userName)" -->
+  <div class="form-group">
+    <div class="form-floating">
+      <input
+        ngModel
+        name="username"
+        #userName
+        id="userName"
+        type="userName"
+        class="form-control"
+        placeholder="ragnarlothbrok"
+      />
+      <label for="userName">Username</label>
+    </div>
+  </div>
+
+  <div class="form-floating">
+    <input
+      ngModel
+      name="password"
+      type="password"
+      class="form-control"
+      id="floatingPassword"
+      placeholder="********"
+    />
+    <label for="floatingPassword">Password</label>
+  </div>
+
+  <button
+    class="w-100 btn btn-lg btn-primary"
+    type="submit"
+    ngClick="signUp()"
+    id="btnSignup"
+  >
+    Sign up
+  </button>
+</form>
