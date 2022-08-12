@@ -1,1 +1,15 @@
-<p>products works!</p>
+<!-- <button (click)="getProducts()">Get products</button> -->
+<div class="row mb-3">
+  <div
+    *ngFor="let product of products"
+    class="col-3"
+    style="border: 1px solid grey"
+  >
+    <!-- <h5>{{ product }}</h5> -->
+    <div>ID: {{ product.id }}</div>
+    <div>Name: {{ product.name }}</div>
+    <div>Price: {{ product.price }}</div>
+    <div>Stock: {{ product.stock }}</div>
+    <div>Image: {{ product.imageName }}</div>
+  </div>
+</div>

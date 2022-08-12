@@ -1,1 +1,17 @@
-<p>employees works!</p>
+<!-- <button (click)="getProducts()">Get products</button> -->
+<div class="row mb-3">
+  <div
+    *ngFor="let employee of employees"
+    class="col-3"
+    style="border: 1px solid grey"
+  >
+    <!-- <h5>{{ employee }}</h5> -->
+    <div>ID: {{ employee.id }}</div>
+    <div>Firstname: {{ employee.firstName }}</div>
+    <div>Lastname: {{ employee.lastName }}</div>
+    <div>Title: {{ employee.title }}</div>
+    <div>Country: {{ employee.city }}, {{ employee.country }}</div>
+    <div>Birth Date: {{ employee.birthDate }}</div>
+    <div>Photo: {{ employee.imageName }}</div>
+  </div>
+</div>
