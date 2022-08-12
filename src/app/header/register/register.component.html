@@ -1,79 +1,81 @@
-<form #form="ngForm" (ngSubmit)="createAccount(form)">
-  <img
-    class="mb-4"
-    src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
-    alt="logo"
-    width="72"
-    height="57"
-  />
-  <h1 class="h3 mb-3 fw-normal">{{ locale.register }}</h1>
+<div class="d-sm-flex align-items-center justify-content-center">
+  <form #form="ngForm" (ngSubmit)="createAccount(form)" class="m-2">
+    <img
+      class="mb-4"
+      src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
+      alt="logo"
+      width="72"
+      height="57"
+    />
+    <h1 class="h3 mb-3 fw-normal">{{ locale.register }}</h1>
 
-  <div class="form-group mb-3">
-    <div class="form-floating">
-      <input
-        ngModel
-        name="firstName"
-        #firstName
-        id="firstName"
-        type="text"
-        class="form-control"
-        placeholder="Ragnar"
-      />
-      <label for="firstName">{{ locale.firstname }}</label>
+    <div class="form-group mb-3">
+      <div class="form-floating">
+        <input
+          ngModel
+          name="firstName"
+          #firstName
+          id="firstName"
+          type="text"
+          class="form-control"
+          placeholder="Ragnar"
+        />
+        <label for="firstName">{{ locale.firstname }}</label>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group mb-3">
-    <div class="form-floating">
-      <input
-        ngModel
-        name="lastName"
-        #lastName
-        id="lastName"
-        type="text"
-        class="form-control"
-        placeholder="Lothbrok"
-      />
-      <label for="lastName">{{ locale.lastname }}</label>
+    <div class="form-group mb-3">
+      <div class="form-floating">
+        <input
+          ngModel
+          name="lastName"
+          #lastName
+          id="lastName"
+          type="text"
+          class="form-control"
+          placeholder="Lothbrok"
+        />
+        <label for="lastName">{{ locale.lastname }}</label>
+      </div>
     </div>
-  </div>
 
-  <!-- (click)="log(userName)" -->
-  <div class="form-group mb-3">
-    <div class="form-floating">
-      <input
-        ngModel
-        name="username"
-        #userName
-        id="userName"
-        type="userName"
-        class="form-control"
-        placeholder="ragnarlothbrok"
-      />
-      <label for="userName">{{ locale.username }}</label>
+    <!-- (click)="log(userName)" -->
+    <div class="form-group mb-3">
+      <div class="form-floating">
+        <input
+          ngModel
+          name="username"
+          #userName
+          id="userName"
+          type="userName"
+          class="form-control"
+          placeholder="ragnarlothbrok"
+        />
+        <label for="userName">{{ locale.username }}</label>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group mb-3">
-    <div class="form-floating">
-      <input
-        ngModel
-        name="password"
-        type="password"
-        class="form-control"
-        id="floatingPassword"
-        placeholder="********"
-      />
-      <label for="floatingPassword">{{ locale.password }}</label>
+    <div class="form-group mb-3">
+      <div class="form-floating">
+        <input
+          ngModel
+          name="password"
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="********"
+        />
+        <label for="floatingPassword">{{ locale.password }}</label>
+      </div>
     </div>
-  </div>
 
-  <button
-    class="w-100 btn btn-lg btn-primary"
-    type="submit"
-    ngClick="signUp()"
-    id="btnSignup"
-  >
-    {{ locale.send }}
-  </button>
-</form>
+    <button
+      class="w-100 btn btn-lg btn-primary"
+      type="submit"
+      ngClick="signUp()"
+      id="btnSignup"
+    >
+      {{ locale.send }}
+    </button>
+  </form>
+</div>

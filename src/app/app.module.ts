@@ -19,6 +19,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { IntroComponent } from './main/intro/intro.component';
 import { SearcherComponent } from './searcher/searcher.component';
+import { SliderComponent } from './main/slider/slider.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { SearcherComponent } from './searcher/searcher.component';
     ContactUsComponent,
     IntroComponent,
     SearcherComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { SearcherComponent } from './searcher/searcher.component';
       progressBar: true,
       progressAnimation: 'increasing',
     }),
+    NgbModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
