@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { AppComponent } from 'src/app/app.component';
 import { environment } from 'src/environments/environment';
 @Component({
@@ -8,23 +9,31 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginComponent extends AppComponent {
   async logIn(form: any) {
-    const body = JSON.stringify(form.value);
-    const res = await fetch(environment.server, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body,
-    });
-    const data = await res.json();
-    if (res.ok) {
-      console.log('Giriş Başarılı! 💪🏻');
-      console.log(res, data);
-      localStorage.setItem('token', data);
-      location.replace('/');
-    } else {
+    try {
+      const body = JSON.stringify(form.value);
+      const res = await fetch(environment.loginRoute, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body,
+      });
+      const data = await res.json();
+      if (res.ok) {
+        this.toastrSuccess('Giriş Başarılı!', 'Yönlendiriliyorsunuz...');
+        console.log(res, data);
+        localStorage.setItem('token', data);
+        setTimeout((): void => {
+          location.replace('/');
+        }, 3000);
+      } else {
+        this.toastrWarning('Giriş yapılamadı', 'Lütfen tekrar deneyiniz...');
+        console.log(res, data);
+      }
+    } catch (err: any) {
+      this.toastrError('Bir şeyler ters gitti!', err.message);
       console.log(`Hata 💥`);
-      console.log(res, data);
+      console.log({ err });
     }
   }
 }

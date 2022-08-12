@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Northwind';
+
+  constructor(private toastr: ToastrService) {}
 
   loggedIn = false;
 
@@ -31,6 +34,19 @@ export class AppComponent {
   setLang(lang: string) {
     localStorage.setItem('lang', lang);
     location.reload();
+  }
+
+  toastrSuccess(msg: string = 'Hello', header: string = 'Alt text') {
+    this.toastr.success(header, msg);
+  }
+  toastrError(msg: string = 'Error', header: string = 'Alt text') {
+    this.toastr.error(header, msg);
+  }
+  toastrInfo(msg: string = 'Info', header: string = 'Alt text') {
+    this.toastr.info(header, msg);
+  }
+  toastrWarning(msg: string = 'Warning', header: string = 'Alt text') {
+    this.toastr.warning(header, msg);
   }
 
   ngOnInit(): void {

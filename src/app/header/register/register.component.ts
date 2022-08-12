@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,23 +9,35 @@ import { environment } from 'src/environments/environment';
 })
 export class RegisterComponent extends AppComponent {
   async createAccount(form: any) {
-    const body = JSON.stringify(form.value);
-    const res = await fetch(environment.server, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body,
-    });
-    const data = await res.json();
-    if (res.ok) {
-      console.log('Kayıt Başarılı! 💪🏻');
-      console.log(res, data);
-      localStorage.setItem('token', data);
-      location.replace('/');
-    } else {
+    try {
+      const body = JSON.stringify(form.value);
+      const res = await fetch(environment.registerRoute, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body,
+      });
+      console.log(res);
+      const data = await res.json();
+      if (res.ok) {
+        this.toastrSuccess('Giriş Başarılı!', 'Yönlendiriliyorsunuz...');
+        console.log(res, data);
+        localStorage.setItem('token', data);
+        setTimeout((): void => {
+          location.replace('/');
+        }, 3000);
+      } else {
+        this.toastrWarning(
+          'Hesap oluşturulamadı',
+          'Lütfen tekrar deneyiniz...',
+        );
+        console.log(res, data);
+      }
+    } catch (err: any) {
+      this.toastrError('Bir şeyler ters gitti!', err.message);
       console.log(`Hata 💥`);
-      console.log(res, data);
+      console.log(err);
     }
   }
 }
