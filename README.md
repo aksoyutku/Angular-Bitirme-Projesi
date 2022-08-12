@@ -1,6 +1,7 @@
 # Önizleme
 
-[![Watch the video](https://wallpapercave.com/wp/wp5722053.png)](https://youtu.be/wFqXzdrd2II)
+Video önizlemesi için linke tıklayınız.
+https://youtu.be/wFqXzdrd2II
 
 # AngularBitirmeProjesi
 
