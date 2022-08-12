@@ -1,1 +1,13 @@
-<p>categories works</p>
+<div class="row mb-3">
+  <div
+    *ngFor="let category of categories"
+    class="col-3"
+    style="border: 1px solid grey"
+  >
+    <!-- <h5>{{ employee }}</h5> -->
+    <div>ID: {{ category.id }}</div>
+    <div>Name: {{ category.name }}</div>
+    <div>Description: {{ category.description }}</div>
+    <div>Photo: {{ category.imageName }}</div>
+  </div>
+</div>
