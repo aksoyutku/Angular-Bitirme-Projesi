@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 import { environment } from 'src/environments/environment';
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent {
+export class RegisterComponent extends AppComponent {
   async createAccount(form: any) {
     const body = JSON.stringify(form.value);
     const res = await fetch(environment.server, {

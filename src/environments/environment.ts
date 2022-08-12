@@ -5,6 +5,17 @@
 export const environment = {
   production: false,
   server: 'http://localhost:3030/api/auth/login',
+  lang: {
+    tr: {
+      login: 'Giriş Yap',
+    },
+    en: {
+      login: 'Login',
+    },
+    jp: {
+      login: 'ログイン',
+    },
+  },
 };
 
 /*

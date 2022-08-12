@@ -14,6 +14,8 @@ import { MainComponent } from './main/main.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { IntroComponent } from './main/intro/intro.component';
+import { SearcherComponent } from './searcher/searcher.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     EmployeesComponent,
     CategoriesComponent,
     ContactUsComponent,
+    IntroComponent,
+    SearcherComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

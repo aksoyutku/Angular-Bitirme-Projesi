@@ -1,78 +1,105 @@
-<div class="container">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a
+      href="/"
+      class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1 d-inline-flex"
+    >
+      <svg class="bi d-none d-lg-block me-3" width="30" height="24">
+        <use xlink:href="#bootstrap"></use></svg
+      ><span class="navbar-brand">Northwind</span>
+    </a>
+
+    <div class="nav-item dropdown">
       <a
-        href="/"
-        class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1 d-inline-flex"
-      >
-        <svg class="bi d-none d-lg-block me-3" width="30" height="24">
-          <use xlink:href="#bootstrap"></use></svg
-        ><span class="navbar-brand">Northwind</span>
-      </a>
-      <div class="nav-item dropdown">
-        <a
-          class="nav-link ms-1 dropdown-toggle"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i class="fa-solid fa-language"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="#">
-              <img src="../../assets/icons/gb.png" /> English</a
-            >
-          </li>
-          <li>
-            <a class="dropdown-item" href="#"
-              ><img src="../../assets/icons/tr.png" /> Türkçe</a
-            >
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              <img src="../../assets/icons/jp.png" /> 日本語</a
-            >
-          </li>
-        </ul>
-      </div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
+        class="nav-link ms-1 dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
         aria-expanded="false"
-        aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="collapse navbar-collapse text-center justify-content-lg-end"
-        id="navbarNavAltMarkup"
-      >
-        <ng-template [ngIf]="loggedIn" [ngIfElse]="login">
-          <div class="navbar-nav">
-            <a class="nav-link ms-1 active" aria-current="page" routerLink="/"
-              >Index</a
-            >
-            <a class="nav-link ms-1" routerLink="/products">Products</a>
-            <a class="nav-link ms-1" routerLink="/categories">Categories</a>
-            <a class="nav-link ms-1" routerLink="/employees">Employees</a>
-            <a class="nav-link ms-1" routerLink="/contact-us">Contact us</a>
-            <a class="nav-link ms-1" routerLink="/logout" id="logout">Logout</a>
-          </div>
-        </ng-template>
-        <ng-template #login>
-          <a class="nav-link ms-1" routerLink="/login">
-            <i class="fa-solid fa-user-lock"></i>Giriş yap
-          </a>
-          <a class="nav-link ms-1" routerLink="/register">
-            <i class="fa-solid fa-user-pen"></i>Kayıt ol
-          </a>
-        </ng-template>
-      </div>
+        <i class="fa-solid fa-language"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <li (click)="setLang('en')" style="cursor: pointer">
+          <a class="dropdown-item">
+            <img src="../../assets/icons/gb.png" /> English</a
+          >
+        </li>
+        <li (click)="setLang('tr')" style="cursor: pointer">
+          <a class="dropdown-item"
+            ><img src="../../assets/icons/tr.png" /> Türkçe</a
+          >
+        </li>
+        <li (click)="setLang('jp')" style="cursor: pointer">
+          <a class="dropdown-item">
+            <img src="../../assets/icons/jp.png" /> 日本語</a
+          >
+        </li>
+      </ul>
     </div>
-  </nav>
-</div>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse text-center justify-content-lg-end"
+      id="navbarNavAltMarkup"
+    >
+      <ng-template [ngIf]="loggedIn" [ngIfElse]="login">
+        <div class="navbar-nav nav-pills">
+          <a
+            class="nav-link ms-1"
+            aria-current="page"
+            routerLink="/"
+            routerLinkActive="active text-light"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >{{ locale.index }}</a
+          >
+          <a
+            class="nav-link ms-1"
+            routerLink="/products"
+            routerLinkActive="active text-light"
+            >{{ locale.products }}</a
+          >
+          <a
+            class="nav-link ms-1"
+            routerLink="/categories"
+            routerLinkActive="active text-light"
+            >{{ locale.categories }}</a
+          >
+          <a
+            class="nav-link ms-1"
+            routerLink="/employees"
+            routerLinkActive="active text-light"
+            >{{ locale.employees }}</a
+          >
+          <a
+            class="nav-link ms-1"
+            routerLink="/contact-us"
+            routerLinkActive="active text-light"
+            >{{ locale.contactUs }}</a
+          >
+          <a class="nav-link ms-1" routerLink="/logout" id="logout">{{
+            locale.logout
+          }}</a>
+        </div>
+      </ng-template>
+      <ng-template #login>
+        <a class="nav-link ms-1" routerLink="/login">
+          <i class="fa-solid fa-user-lock me-2"></i>{{ locale.login }}
+        </a>
+        <a class="nav-link ms-3" routerLink="/register">
+          <i class="fa-solid fa-user-pen me-2"></i>{{ locale.register }}
+        </a>
+      </ng-template>
+    </div>
+  </div>
+</nav>

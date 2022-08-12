@@ -1,7 +1,9 @@
-<app-header></app-header>
+<div class="container">
+  <app-header></app-header>
 
-<div class="container d-flex justify-content-center">
-  <router-outlet></router-outlet>
+  <div class="d-flex justify-content-center overflow-auto row">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-footer></app-footer>
 </div>
-
-<app-footer></app-footer>

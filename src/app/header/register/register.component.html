@@ -6,9 +6,9 @@
     width="72"
     height="57"
   />
-  <h1 class="h3 mb-3 fw-normal">Register</h1>
+  <h1 class="h3 mb-3 fw-normal">{{ locale.register }}</h1>
 
-  <div class="form-group">
+  <div class="form-group mb-3">
     <div class="form-floating">
       <input
         ngModel
@@ -19,11 +19,11 @@
         class="form-control"
         placeholder="Ragnar"
       />
-      <label for="firstName">Firstname</label>
+      <label for="firstName">{{ locale.firstname }}</label>
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group mb-3">
     <div class="form-floating">
       <input
         ngModel
@@ -34,12 +34,12 @@
         class="form-control"
         placeholder="Lothbrok"
       />
-      <label for="lastName">Lastname</label>
+      <label for="lastName">{{ locale.lastname }}</label>
     </div>
   </div>
 
   <!-- (click)="log(userName)" -->
-  <div class="form-group">
+  <div class="form-group mb-3">
     <div class="form-floating">
       <input
         ngModel
@@ -50,20 +50,22 @@
         class="form-control"
         placeholder="ragnarlothbrok"
       />
-      <label for="userName">Username</label>
+      <label for="userName">{{ locale.username }}</label>
     </div>
   </div>
 
-  <div class="form-floating">
-    <input
-      ngModel
-      name="password"
-      type="password"
-      class="form-control"
-      id="floatingPassword"
-      placeholder="********"
-    />
-    <label for="floatingPassword">Password</label>
+  <div class="form-group mb-3">
+    <div class="form-floating">
+      <input
+        ngModel
+        name="password"
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="********"
+      />
+      <label for="floatingPassword">{{ locale.password }}</label>
+    </div>
   </div>
 
   <button
@@ -72,6 +74,6 @@
     ngClick="signUp()"
     id="btnSignup"
   >
-    Sign up
+    {{ locale.send }}
   </button>
 </form>
