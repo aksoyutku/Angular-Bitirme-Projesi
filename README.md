@@ -5,6 +5,18 @@ https://youtu.be/wFqXzdrd2II
 
 # AngularBitirmeProjesi
 
+Projeyi çalıştırmak için Northwind back-end server çalıştırılması gerekmektedir.
+
+Önce terminalde "npm i -g northwind-back-end" yazarak northwind sunucunu yükleyin.
+Sonra yine terminale "northwind" yazıp çalıştırın.
+
+NOT: Northwind sunucusunun 3030 portunda çalışması gerekmektedir. Aksi takdirde henüz bir config dosyası olmadığı için gerekli yerlerde elle değiştirilmesi gerekmektedir.
+
+İkinci bir terminal oluşturup angular projesini "ng serve" yazarak çalıştırın.
+NOT: Henüz yalnızca yerel bilgisayarda geliştirmek içindir.
+
+## Angular Defaults
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
 ## Development server
