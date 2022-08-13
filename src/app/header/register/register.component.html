@@ -1,13 +1,8 @@
 <div class="d-sm-flex align-items-center justify-content-center">
   <form #form="ngForm" (ngSubmit)="createAccount(form)" class="m-2">
-    <img
-      class="mb-4"
-      src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
-      alt="logo"
-      width="72"
-      height="57"
-    />
-    <h1 class="h3 mb-3 fw-normal">{{ locale.register }}</h1>
+    <h1 class="h3 mb-3 fw-normal">
+      <i class="fa-solid fa-user-pen me-2"></i>{{ locale.register }}
+    </h1>
 
     <div class="form-group mb-3">
       <div class="form-floating">
@@ -49,7 +44,7 @@
           id="userName"
           type="userName"
           class="form-control"
-          placeholder="ragnarlothbrok"
+          placeholder="asdf"
         />
         <label for="userName">{{ locale.username }}</label>
       </div>

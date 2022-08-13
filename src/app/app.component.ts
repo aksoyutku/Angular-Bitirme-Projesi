@@ -29,8 +29,6 @@ export class AppComponent {
     send: '',
   };
 
-  getLang() {}
-
   setLang(lang: string) {
     localStorage.setItem('lang', lang);
     location.reload();

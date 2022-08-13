@@ -1,35 +1,36 @@
 <div class="d-sm-flex align-items-center justify-content-center">
   <form #login="ngForm" (ngSubmit)="logIn(login)" class="m-2">
-    <img
-      class="mb-4"
-      src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
-      alt="logo"
-      width="72"
-      height="57"
-    />
-    <h1 class="h3 mb-3 fw-normal">{{ locale.login }}</h1>
+    <h1 class="h3 mb-3 fw-normal">
+      <i class="fa-solid fa-user-lock me-2"></i>{{ locale.login }}
+    </h1>
 
-    <div class="form-floating mb-3">
-      <input
-        ngModel
-        name="username"
-        #userName
-        id="userName"
-        type="userName"
-        class="form-control"
-      />
-      <label for="userName">{{ locale.username }}</label>
+    <div class="form-group mb-3">
+      <div class="form-floating mb-3">
+        <input
+          ngModel
+          name="username"
+          #userName
+          id="userName"
+          type="userName"
+          class="form-control"
+          placeholder="placeholder"
+        />
+        <label for="userName">{{ locale.username }}</label>
+      </div>
     </div>
 
-    <div class="form-floating mb-3">
-      <input
-        ngModel
-        name="password"
-        type="password"
-        class="form-control"
-        id="floatingPassword"
-      />
-      <label for="floatingPassword">{{ locale.password }}</label>
+    <div class="form-group mb-3">
+      <div class="form-floating mb-3">
+        <input
+          ngModel
+          name="password"
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="placeholder"
+        />
+        <label for="floatingPassword">{{ locale.password }}</label>
+      </div>
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
