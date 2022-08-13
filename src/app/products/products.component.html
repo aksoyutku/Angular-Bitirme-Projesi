@@ -1,15 +1,45 @@
 <!-- <button (click)="getProducts()">Get products</button> -->
 <div class="row mb-3">
+  <app-searcher></app-searcher>
   <div
     *ngFor="let product of products"
-    class="col-3"
-    style="border: 1px solid grey"
+    class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 my-1"
   >
-    <!-- <h5>{{ product }}</h5> -->
+    <div class="card shadow-sm">
+      <img
+        class="img-fluid"
+        src="http://localhost:3030/api/products/images/{{ product.imageName }}"
+        alt="{{ product.name }}"
+      />
+
+      <div class="card-body">
+        <h6 class="card-text">{{ product.name }}</h6>
+        <div class="d-flex justify-content-between">
+          <span
+            ><i class="fa-solid fa-dollar-sign"></i>{{ product.price }}</span
+          >
+          <span><i class="fa-solid fa-cubes"></i>{{ product.stock }}</span>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center mt-2">
+          <!-- <div class="btn-group"> -->
+          <button type="button" class="btn btn-sm btn-outline-primary">
+            Detaylar
+          </button>
+          <button type="button" class="btn btn-sm mx-2 btn-warning">
+            Düzenle
+          </button>
+          <button type="button" class="btn btn-sm btn-danger">Sil</button>
+        </div>
+      </div>
+    </div>
+    <!-- </div>
+    <h5>{{ product }}</h5>
     <div>ID: {{ product.id }}</div>
     <div>Name: {{ product.name }}</div>
     <div>Price: {{ product.price }}</div>
     <div>Stock: {{ product.stock }}</div>
     <div>Image: {{ product.imageName }}</div>
+  </div> -->
   </div>
 </div>
