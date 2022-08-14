@@ -17,9 +17,15 @@ import {
 export class ProductsComponent implements OnInit {
   constructor(private modalService: NgbModal) {}
 
+  isListView: boolean = false;
   textInput: string = '';
   products: any = [];
   filteredProducts: any = [];
+
+  changeView(boolean: boolean) {
+    this.isListView = boolean;
+    localStorage.setItem('isListView', JSON.stringify(this.isListView));
+  }
 
   searchQuery(event: any) {
     this.products = this.filteredProducts.filter((i: { name: string }) =>
@@ -56,6 +62,9 @@ export class ProductsComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.getProducts();
+
+    const isListView = localStorage.getItem('isListView');
+    if (isListView) this.isListView = JSON.parse(isListView);
   }
 }
 
