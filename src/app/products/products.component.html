@@ -25,13 +25,27 @@
 
         <div class="d-flex justify-content-around align-items-center mt-auto">
           <!-- <div class="btn-group"> -->
-          <button type="button" class="btn btn-sm btn-outline-primary">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-primary"
+            (click)="openDetailsModal(product)"
+          >
             Detaylar
           </button>
-          <button type="button" class="btn btn-sm mx-2 btn-warning">
+          <button
+            type="button"
+            class="btn btn-sm mx-2 btn-warning"
+            (click)="openEditModal(product)"
+          >
             Düzenle
           </button>
-          <button type="button" class="btn btn-sm btn-danger">Sil</button>
+          <button
+            type="button"
+            class="btn btn-sm btn-danger"
+            (click)="openDeleteModal(product)"
+          >
+            Sil
+          </button>
         </div>
       </div>
     </div>
