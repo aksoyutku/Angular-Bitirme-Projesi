@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { AppComponent } from 'src/app/app.component';
 import { environment } from 'src/environments/environment';
 @Component({

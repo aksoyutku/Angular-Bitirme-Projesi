@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h4 class="modal-title">Dikkat!</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <!-- Body -->
+  <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <svg
+      class="bi flex-shrink-0 me-2"
+      width="24"
+      height="24"
+      role="img"
+      aria-label="Danger:"
+    >
+      <use xlink:href="#exclamation-triangle-fill" />
+    </svg>
+    <div>
+      <strong>Bir ürün silmek üzeresiniz!</strong>
+      <br />
+      Silme işlemine devam etmek istiyor musunuz?
+    </div>
+  </div>
+  <!-- Body -->
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    (click)="activeModal.close('Close click')"
+  >
+    Close
+  </button>
+  <button type="button" class="btn btn-danger" (click)="deleteProduct(product)">
+    Sil
+  </button>
+</div>

@@ -16,8 +16,7 @@ export class CategoriesComponent implements OnInit {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + this.token,
-        Host: 'api.producthunt.com',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
     const data: [] = await res.json();

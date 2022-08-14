@@ -11,14 +11,13 @@ import { FooterComponent } from './footer/footer.component';
 import { LogoutComponent } from './header/logout/logout.component';
 import { LoginComponent } from './header/login/login.component';
 import { RegisterComponent } from './header/register/register.component';
-import { FormsModule } from '@angular/forms';
-import { ProductsComponent } from './products/products.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditModal, ProductsComponent } from './products/products.component';
 import { MainComponent } from './main/main.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { IntroComponent } from './main/intro/intro.component';
-import { SearcherComponent } from './searcher/searcher.component';
 import { SliderComponent } from './main/slider/slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -36,13 +35,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CategoriesComponent,
     ContactUsComponent,
     IntroComponent,
-    SearcherComponent,
     SliderComponent,
+    EditModal,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       progressBar: true,
