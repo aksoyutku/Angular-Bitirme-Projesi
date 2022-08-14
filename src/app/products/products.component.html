@@ -70,7 +70,7 @@
         [ngClass]="{
           'd-flex flex-row mb-2': isListView
         }"
-        style="height: 300px"
+        [style.height]="isListView ? '160px' : '320px'"
       >
         <!-- style="height: 250px" -->
         <ng-container *ngIf="!isListView; else listViewImage">
@@ -95,22 +95,43 @@
         </ng-template>
 
         <div
-          class="card-body"
+          class="row card-body"
           [ngClass]="{
-            'col-sm-9': isListView,
+            'col-sm-9 px-0 justify-content-between': isListView,
             'd-flex flex-column': !isListView
           }"
         >
-          <h6 class="card-text">{{ product.name }}</h6>
+          <h6
+            [ngClass]="{
+              'card-text col-3  align-self-end': isListView,
+              'card-text': !isListView
+            }"
+          >
+            {{ product.name }}
+          </h6>
 
-          <div class="d-flex justify-content-between">
+          <div
+            class="align-content-around"
+            [ngClass]="{
+              'd-inline-flex col-3 align-self-end justify-content-evenly ':
+                isListView,
+              'd-flex justify-content-around mt-auto mb-2': !isListView
+            }"
+          >
             <span
               ><i class="fa-solid fa-dollar-sign"></i>{{ product.price }}</span
             >
             <span><i class="fa-solid fa-cubes"></i>{{ product.stock }}</span>
           </div>
 
-          <div class="d-flex justify-content-around align-items-center mt-auto">
+          <div
+            class=""
+            [ngClass]="{
+              'd-flex flex-row col-3 align-self-end': isListView,
+              'd-flex align-items-center mt-auto justify-content-around':
+                !isListView
+            }"
+          >
             <!-- <div class="btn-group"> -->
             <button
               type="button"
