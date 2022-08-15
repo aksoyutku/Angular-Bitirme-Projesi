@@ -1,0 +1,88 @@
+<div class="modal-header">
+  <h4 class="modal-title">
+    <strong>Ürün Düzenleme:</strong> {{ employee.name }}
+  </h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <!-- Modal Body -->
+  <!-- #employeeForm="ngForm" -->
+  <form
+    [formGroup]="editEmployeeForm"
+    (ngSubmit)="editEmployee(editEmployeeForm)"
+  >
+    <div class="d-flex flex-column gap-1">
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            [ngModel]="employee.name"
+            formControlName="name"
+            name="name"
+            id="employeeName"
+            type="text"
+            class="form-control"
+            placeholder="a"
+          />
+          <label for="employeeName"> Ürün Adı </label>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            [ngModel]="employee.price"
+            formControlName="price"
+            name="price"
+            id="employeePrice"
+            type="text"
+            class="form-control"
+            placeholder="a"
+          />
+          <label for="employeePrice"> Ürün Fiyatı </label>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            [ngModel]="employee.stock"
+            formControlName="stock"
+            name="stock"
+            id="employeeStock"
+            type="text"
+            class="form-control"
+            placeholder="a"
+          />
+          <label for="employeeStock"> Stock </label>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            [ngModel]="employee.imageName"
+            formControlName="imageName"
+            name="imageName"
+            id="employeeImage"
+            type="text"
+            class="form-control"
+            placeholder="a"
+          />
+          <label for="employeeImage"> Image URL </label>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Body -->
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-primary"
+        (click)="activeModal.close('Close click')"
+      >
+        Close</button
+      ><button type="submit" class="btn btn-warning">Edit</button>
+    </div>
+  </form>
+</div>

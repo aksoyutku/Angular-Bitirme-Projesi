@@ -1,0 +1,91 @@
+<div class="modal-header">
+  <h4 class="modal-title">
+    <strong>Ürün Ekleme</strong>
+  </h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <!-- Modal Body -->
+  <!-- #employeeForm="ngForm" -->
+  <form
+    validation
+    [formGroup]="createEmployeeForm"
+    (ngSubmit)="createEmployee(createEmployeeForm)"
+  >
+    <div class="d-flex flex-column gap-1">
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            formControlName="name"
+            name="name"
+            id="employeeName"
+            type="text"
+            class="form-control"
+            placeholder="a"
+            minlength="2"
+            required
+          />
+          <label for="employeeName"> Ürün Adı </label>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            formControlName="price"
+            name="price"
+            id="employeePrice"
+            type="number"
+            class="form-control"
+            placeholder="a"
+            required
+          />
+          <label for="employeePrice"> Ürün Fiyatı </label>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            formControlName="stock"
+            name="stock"
+            id="employeeStock"
+            type="number"
+            class="form-control"
+            placeholder="a"
+            required
+          />
+          <label for="employeeStock"> Stock </label>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            formControlName="imageName"
+            name="imageName"
+            id="employeeImage"
+            type="text"
+            class="form-control"
+            placeholder="a"
+            minlength="5"
+            required
+          />
+          <label for="employeeImage"> Image URL </label>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Body -->
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-primary"
+        (click)="activeModal.close('Close click')"
+      >
+        Close</button
+      ><button type="submit" class="btn btn-warning">Create</button>
+    </div>
+  </form>
+</div>
