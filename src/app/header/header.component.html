@@ -53,8 +53,8 @@
       class="collapse navbar-collapse text-center justify-content-lg-end"
       id="navbarNavAltMarkup"
     >
-      <ng-template [ngIf]="loggedIn" [ngIfElse]="login">
-        <div class="navbar-nav nav-pills">
+      <div class="navbar-nav nav-pills">
+        <ng-template [ngIf]="loggedIn" [ngIfElse]="login">
           <a
             class="nav-link ms-1"
             aria-current="page"
@@ -83,23 +83,30 @@
           >
           <a
             class="nav-link ms-1"
-            routerLink="/contact-us"
+            routerLink="/get-messages"
             routerLinkActive="active text-light"
-            >{{ locale.contactUs }}</a
+            >{{ locale.msgReceived }}</a
           >
+
           <a class="nav-link ms-1" routerLink="/logout" id="logout">{{
             locale.logout
           }}</a>
-        </div>
-      </ng-template>
-      <ng-template #login>
-        <a class="nav-link ms-1" routerLink="/login">
-          <i class="fa-solid fa-user-lock me-2"></i>{{ locale.login }}
-        </a>
-        <a class="nav-link ms-3" routerLink="/register">
-          <i class="fa-solid fa-user-pen me-2"></i>{{ locale.register }}
-        </a>
-      </ng-template>
+        </ng-template>
+        <ng-template #login>
+          <a class="nav-link ms-1" routerLink="/login">
+            <i class="fa-solid fa-user-lock me-2"></i>{{ locale.login }}
+          </a>
+          <a class="nav-link ms-3" routerLink="/register">
+            <i class="fa-solid fa-user-pen me-2"></i>{{ locale.register }}
+          </a>
+        </ng-template>
+        <a
+          class="nav-link ms-1"
+          routerLink="/contact-us"
+          routerLinkActive="active text-light"
+          >{{ locale.contactUs }}</a
+        >
+      </div>
     </div>
   </div>
 </nav>

@@ -8,6 +8,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { MainComponent } from './main/main.component';
+import { GetMessagesComponent } from './get-messages/get-messages.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'employees', component: EmployeesComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'contact-us', component: ContactUsComponent },
+  { path: 'get-messages', component: GetMessagesComponent },
 ];
 
 @NgModule({

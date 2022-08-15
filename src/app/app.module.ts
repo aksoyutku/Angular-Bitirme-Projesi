@@ -20,6 +20,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { IntroComponent } from './main/intro/intro.component';
 import { SliderComponent } from './main/slider/slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GetMessagesComponent } from './get-messages/get-messages.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IntroComponent,
     SliderComponent,
     EditModal,
+    GetMessagesComponent,
   ],
   imports: [
     BrowserModule,

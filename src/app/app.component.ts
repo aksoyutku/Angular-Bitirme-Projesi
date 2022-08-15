@@ -19,6 +19,7 @@ export class AppComponent {
     categories: '',
     employees: '',
     contactUs: '',
+    msgReceived: '',
     logout: '',
     login: '',
     register: '',
@@ -57,6 +58,7 @@ export class AppComponent {
       this.locale.categories = 'Kategoriler';
       this.locale.employees = 'Çalışanlar';
       this.locale.contactUs = 'Bize Ulaşın';
+      this.locale.msgReceived = 'Gelen Mesajlar';
       this.locale.logout = 'Çıkış';
       this.locale.login = 'Giriş yap';
       this.locale.register = 'Kayıt ol';
@@ -72,6 +74,7 @@ export class AppComponent {
       this.locale.categories = 'Categories';
       this.locale.employees = 'Employees';
       this.locale.contactUs = 'Contact Us';
+      this.locale.msgReceived = 'Msg Received';
       this.locale.logout = 'Logout';
       this.locale.login = 'Login';
       this.locale.register = 'Register';
@@ -86,7 +89,8 @@ export class AppComponent {
       this.locale.products = '商品';
       this.locale.categories = 'カテゴリー';
       this.locale.employees = '社員';
-      this.locale.contactUs = '連絡先';
+      this.locale.contactUs = '連絡';
+      this.locale.msgReceived = '受信箱';
       this.locale.logout = 'ログアウト';
       this.locale.login = 'ログイン';
       this.locale.register = '登録';
