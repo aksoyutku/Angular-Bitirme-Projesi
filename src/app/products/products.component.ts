@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
@@ -18,6 +18,17 @@ export class ProductsComponent implements OnInit {
   constructor(private modalService: NgbModal) {}
 
   isListView: boolean = false;
+  innerScreenWidth: number = window.innerWidth;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?: any) {
+    this.innerScreenWidth = window.innerWidth;
+    if (this.innerScreenWidth < 768) this.isListView = false;
+    else if (this.innerScreenWidth >= 768) {
+      if (localStorage.getItem('isListView')) this.isListView = true;
+    }
+  }
+
   textInput: string = '';
   products: any = [];
   filteredProducts: any = [];
