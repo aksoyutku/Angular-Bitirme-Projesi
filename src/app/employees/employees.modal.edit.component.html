@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h4 class="modal-title">
-    <strong>Ürün Düzenleme:</strong> {{ employee.name }}
+    <strong>Kişi Düzenleme:</strong> {{ employee.firstName }}
   </h4>
   <button
     type="button"
@@ -20,43 +20,96 @@
       <div class="form-group mb-2">
         <div class="form-floating">
           <input
-            [ngModel]="employee.name"
-            formControlName="name"
-            name="name"
-            id="employeeName"
+            [ngModel]="employee.firstName"
+            formControlName="employee.firstName"
+            name="firstName"
+            id="employeeFirstName"
             type="text"
             class="form-control"
             placeholder="a"
+            minlength="2"
+            required
           />
-          <label for="employeeName"> Ürün Adı </label>
+          <label for="employeeFirstName"> İsim </label>
         </div>
       </div>
       <div class="form-group mb-2">
         <div class="form-floating">
           <input
-            [ngModel]="employee.price"
-            formControlName="price"
-            name="price"
-            id="employeePrice"
+            [ngModel]="employee.lastName"
+            formControlName="lastName"
+            name="lastName"
+            id="employeeLastName"
             type="text"
             class="form-control"
             placeholder="a"
+            minlength="2"
+            required
           />
-          <label for="employeePrice"> Ürün Fiyatı </label>
+          <label for="employeeLastName"> Soyisim </label>
         </div>
       </div>
       <div class="form-group mb-2">
         <div class="form-floating">
           <input
-            [ngModel]="employee.stock"
-            formControlName="stock"
-            name="stock"
-            id="employeeStock"
+            [ngModel]="employee.title"
+            formControlName="title"
+            name="title"
+            id="employeeTitle"
             type="text"
             class="form-control"
             placeholder="a"
+            minlength="2"
+            required
           />
-          <label for="employeeStock"> Stock </label>
+          <label for="employeeTitle"> Pozisyon </label>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            [ngModel]="employee.country"
+            formControlName="country"
+            name="country"
+            id="employeeCountry"
+            type="text"
+            class="form-control"
+            placeholder="a"
+            minlength="2"
+            required
+          />
+          <label for="employeeCountry"> Ülke </label>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            [ngModel]="employee.city"
+            formControlName="city"
+            name="city"
+            id="employeeCity"
+            type="text"
+            class="form-control"
+            placeholder="a"
+            minlength="2"
+            required
+          />
+          <label for="employeeCity"> Şehir </label>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <div class="form-floating">
+          <input
+            [ngModel]="employee.birthDate"
+            formControlName="birthDate"
+            name="birthDate"
+            id="employeeBirthDate"
+            type="date"
+            class="form-control"
+            placeholder="a"
+            required
+          />
+          <label for="employeeBirthDate"> Doğum tarihi </label>
         </div>
       </div>
       <div class="form-group mb-2">
@@ -69,6 +122,8 @@
             type="text"
             class="form-control"
             placeholder="a"
+            minlength="5"
+            required
           />
           <label for="employeeImage"> Image URL </label>
         </div>

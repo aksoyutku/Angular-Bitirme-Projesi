@@ -119,7 +119,7 @@
                 'card-text text-center mt-auto': !isListView
               }"
             >
-              {{ employee.name }}
+              {{ employee.firstName }} {{ employee.lastName }}
             </h6>
 
             <div
@@ -129,11 +129,9 @@
                 'justify-content-around mt mb-2': !isListView
               }"
             >
-              <span
-                ><i class="fa-solid fa-dollar-sign"></i
-                >{{ employee.price }}</span
-              >
-              <span><i class="fa-solid fa-cubes"></i>{{ employee.stock }}</span>
+              <span>{{ employee.title }}</span>
+              <span>{{ employee.city }}, {{ employee.country }}</span>
+              <span>{{ employee.birthDate }}</span>
             </div>
 
             <div

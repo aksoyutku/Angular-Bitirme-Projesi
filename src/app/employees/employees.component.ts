@@ -2,7 +2,14 @@ import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  ReactiveFormsModule,
+  NgModel,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-employees',
@@ -41,21 +48,21 @@ export class EmployeesComponent implements OnInit {
   }
 
   openCreateModal() {
-    const modalRef = this.modalService.open(createModal);
+    const modalRef = this.modalService.open(CreateEmployeeModal);
   }
 
   openDetailsModal(employee: object) {
-    const modalRef = this.modalService.open(detailsModal);
+    const modalRef = this.modalService.open(DetailsEmployeeModal);
     modalRef.componentInstance.employee = employee;
   }
 
   openEditModal(employee: object) {
-    const modalRef = this.modalService.open(EditModal);
+    const modalRef = this.modalService.open(EditEmployeeModal);
     modalRef.componentInstance.employee = employee;
   }
 
   openDeleteModal(employee: object) {
-    const modalRef = this.modalService.open(deleteModal);
+    const modalRef = this.modalService.open(DeleteEmployeeModal);
     modalRef.componentInstance.employee = employee;
   }
 
@@ -78,7 +85,7 @@ export class EmployeesComponent implements OnInit {
   selector: 'ngbd-modal-content',
   templateUrl: './employees.modal.details.component.html',
 })
-export class detailsModal {
+export class DetailsEmployeeModal {
   @Input() employee: any;
 
   constructor(public activeModal: NgbActiveModal) {}
@@ -90,7 +97,7 @@ export class detailsModal {
   imports: [ReactiveFormsModule],
   standalone: true,
 })
-export class createModal {
+export class CreateEmployeeModal {
   constructor(
     public activeModal: NgbActiveModal,
     private toastr: ToastrService,
@@ -145,10 +152,9 @@ export class createModal {
 
 @Component({
   selector: 'ngbd-modal-content',
-  templateUrl: './employees.modal.details.component.html',
-  standalone: true,
+  templateUrl: './employees.modal.edit.component.html',
 })
-export class EditModal {
+export class EditEmployeeModal {
   employee: any;
 
   constructor(
@@ -192,7 +198,7 @@ export class EditModal {
   selector: 'ngbd-modal-content',
   templateUrl: './employees.modal.delete.component.html',
 })
-export class deleteModal {
+export class DeleteEmployeeModal {
   @Input() employee: any;
 
   constructor(

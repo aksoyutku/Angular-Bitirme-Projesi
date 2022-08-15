@@ -2,12 +2,7 @@ import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
-import {
-  FormGroup,
-  FormControl,
-  NgForm,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-products',
@@ -46,21 +41,21 @@ export class ProductsComponent implements OnInit {
   }
 
   openCreateModal() {
-    const modalRef = this.modalService.open(createModal);
+    const modalRef = this.modalService.open(CreateProductModal);
   }
 
   openDetailsModal(product: object) {
-    const modalRef = this.modalService.open(detailsModal);
+    const modalRef = this.modalService.open(DetailsProductModal);
     modalRef.componentInstance.product = product;
   }
 
   openEditModal(product: object) {
-    const modalRef = this.modalService.open(EditModal);
+    const modalRef = this.modalService.open(EditProductsModal);
     modalRef.componentInstance.product = product;
   }
 
   openDeleteModal(product: object) {
-    const modalRef = this.modalService.open(deleteModal);
+    const modalRef = this.modalService.open(DeleteProductModal);
     modalRef.componentInstance.product = product;
   }
 
@@ -83,7 +78,7 @@ export class ProductsComponent implements OnInit {
   selector: 'ngbd-modal-content',
   templateUrl: './products.modal.details.component.html',
 })
-export class detailsModal {
+export class DetailsProductModal {
   @Input() product: any;
 
   constructor(public activeModal: NgbActiveModal) {}
@@ -95,7 +90,7 @@ export class detailsModal {
   imports: [ReactiveFormsModule],
   standalone: true,
 })
-export class createModal {
+export class CreateProductModal {
   constructor(
     public activeModal: NgbActiveModal,
     private toastr: ToastrService,
@@ -140,7 +135,7 @@ export class createModal {
   selector: 'ngbd-modal-content',
   templateUrl: './products.modal.edit.component.html',
 })
-export class EditModal {
+export class EditProductsModal {
   product: any;
 
   constructor(
@@ -184,7 +179,7 @@ export class EditModal {
   selector: 'ngbd-modal-content',
   templateUrl: './products.modal.delete.component.html',
 })
-export class deleteModal {
+export class DeleteProductModal {
   @Input() product: any;
 
   constructor(
