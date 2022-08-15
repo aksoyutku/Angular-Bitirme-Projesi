@@ -7,13 +7,13 @@ https://youtu.be/wFqXzdrd2II
 
 Projeyi çalıştırmak için Northwind back-end server çalıştırılması gerekmektedir.
 
-Önce terminalde "npm i -g northwind-back-end" yazarak northwind sunucunu yükleyin.
-Yüklenme bittikten sonra proje dizini içinde "npm i" yazarak gerekli modülleri yükleyin.
-Sonra yine terminale "northwind" yazıp çalıştırın.
+Önce terminalde `npm i -g northwind-back-end` yazarak northwind sunucunu yükleyin.
+Yüklenme bittikten sonra proje dizini içinde `npm i` yazarak gerekli modülleri yükleyin.
+Sonra yine terminale `northwind` yazıp çalıştırın.
 
 NOT: Northwind sunucusunun 3030 portunda çalışması gerekmektedir. Aksi takdirde henüz bir config dosyası olmadığı için gerekli yerlerde elle değiştirilmesi gerekmektedir.
 
-İkinci bir terminal oluşturup angular projesini "ng serve" yazarak çalıştırın.
+İkinci bir terminal oluşturup angular projesini `ng serve` yazarak çalıştırın.
 NOT: Henüz yalnızca yerel bilgisayarda geliştirmek içindir.
 
 ## Angular Defaults
