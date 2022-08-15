@@ -41,10 +41,13 @@ export class EmployeesComponent implements OnInit {
   }
 
   searchQuery(event: any) {
-    this.employees = this.filteredEmployees.filter((i: { name: string }) =>
-      i.name.toLowerCase().includes(this.textInput.toLowerCase())
+    this.employees = this.filteredEmployees.filter(
+      (i: { lastName: string; firstName: string }) =>
+        `${i.firstName} ${i.lastName}`
+          .toLowerCase()
+          .includes(this.textInput.toLowerCase())
     );
-    console.log(this.textInput);
+    // console.log(this.textInput);
   }
 
   openCreateModal() {
